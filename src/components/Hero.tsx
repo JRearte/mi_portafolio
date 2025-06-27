@@ -1,4 +1,3 @@
-import logo from "image/logo-sf.webp";
 import { FaFileAlt, FaTools, FaFolderOpen, FaEnvelope } from "react-icons/fa";
 
 
@@ -21,7 +20,7 @@ export default function Hero() {
         {/* Imagen */}
         <div className="md:w-1/2">
           <img
-            src={logo}
+            src="image/logo-sf.webp"
             alt="Logo personal"
             draggable="false"
             className="w-full h-auto max-w-xs md:max-w-full"
