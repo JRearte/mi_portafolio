@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@658,83&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-doto: 'Doto', sans-serif;
+  --font-ibm-plex-mono: 'IBM Plex Mono', monospace;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #22c55e #0c0a09;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0c0a09;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #22c55e;
+  border-radius: 9999px;
+  border: 2px solid #0c0a09;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #16a34a;
+}
