@@ -1,4 +1,4 @@
-import logo from "../assets/image/logo-sf.webp";
+import logo from "image/logo-sf.webp";
 import { FaFileAlt, FaTools, FaFolderOpen, FaEnvelope } from "react-icons/fa";
 
 
