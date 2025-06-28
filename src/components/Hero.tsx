@@ -1,5 +1,5 @@
 import { FaFileAlt, FaTools, FaFolderOpen, FaEnvelope } from "react-icons/fa";
-
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Hero() {
   return (
@@ -7,13 +7,20 @@ export default function Hero() {
 
       {/* Contenido principal: texto + imagen */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 w-full">
+
         {/* Texto */}
         <div className="md:w-1/2">
-          <p className="font-doto text-4xl font-bold mb-4 text-center md:text-left text-gray-50">
-            BIENVENIDOS
-          </p>
+          <TypeAnimation
+            sequence={["BIENVENIDOS"]}
+            wrapper="p"
+            speed={5}
+            cursor={false}
+            repeat={0}
+            className="font-doto text-4xl font-bold mb-4 text-center md:text-left text-gray-50"
+          />
+
           <p className="font-ibm-plex-mono text-lg leading-relaxed text-justify mb-6 text-gray-50">
-            Mi nombre es Jonatán Rearte. Soy un desarrollador web full stack de Argentina. En búsqueda de nuevas experiencias y conocimientos, me aventuré a aprender <strong>React</strong> para el front-end y <strong>Laravel</strong> para el back-end, con el objetivo de abrir un camino para los analistas de sistemas de mi pueblo.
+            Mi nombre es Jonatán Rearte. Soy desarrollador web full stack de Argentina. En mi búsqueda constante de nuevas experiencias y conocimientos, decidí aprender <strong>React</strong> para el front-end y <strong>Laravel</strong> para el back-end, con el objetivo de abrir camino a los analistas de sistemas de la Unidad Académica de Río Turbio.
           </p>
         </div>
 
@@ -30,7 +37,7 @@ export default function Hero() {
 
       {/* Botones de acción */}
       <div className="flex flex-wrap justify-center gap-4">
-        {/* Botón para ver CV */}
+
         <a
           href="https://www.canva.com/design/DAGqTrUH9_k/1o-JSqaBwvIpPRQ7JYTPag/view?utm_content=DAGqTrUH9_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h40ce2b8d0a"
           target="_blank"
@@ -43,7 +50,6 @@ export default function Hero() {
           Curriculum
         </a>
 
-        {/* Botón Mi Kit */}
         <a
           href="#kit"
           draggable="false"
@@ -54,7 +60,6 @@ export default function Hero() {
           Mi Kit
         </a>
 
-        {/* Botón Proyectos */}
         <a
           href="#proyectos"
           draggable="false"
@@ -65,7 +70,6 @@ export default function Hero() {
           Proyectos
         </a>
 
-        {/* Botón Contactos */}
         <a
           href="#footer"
           draggable="false"

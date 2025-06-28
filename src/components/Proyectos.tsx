@@ -30,15 +30,15 @@ function CardProyecto({ proyecto }: { proyecto: Proyecto }) {
           src={proyecto.imagenes[indice]}
           alt={`${proyecto.nombre} imagen ${indice + 1}`}
           draggable="false"
-          className="w-full h-48 object-cover rounded transition duration-500"
+          className="w-full h-64 object-cover rounded transition duration-500"
         />
 
         <button
           onClick={anterior}
           className="absolute left-0 top-1/2 -translate-y-1/2 
-             bg-black/50 text-white w-8 h-8 
+             bg-black/80 text-white w-6 h-16 
              flex items-center justify-center 
-             rounded-md hover:bg-black/70 transition"
+             rounded-r-md hover:bg-black/70 transition"
         >
           ‹
         </button>
@@ -46,9 +46,9 @@ function CardProyecto({ proyecto }: { proyecto: Proyecto }) {
         <button
           onClick={siguiente}
           className="absolute right-0 top-1/2 -translate-y-1/2 
-             bg-black/50 text-white w-8 h-8 
+             bg-black/80 text-white w-6 h-16 
              flex items-center justify-center 
-             rounded-md hover:bg-black/70 transition"
+             rounded-l-md border-red-500 hover:bg-black/70 transition"
         >
           ›
         </button>
