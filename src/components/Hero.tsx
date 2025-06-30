@@ -1,7 +1,11 @@
 import { FaFileAlt, FaTools, FaFolderOpen, FaEnvelope } from "react-icons/fa";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="flex flex-col items-center justify-center px-4 py-20 max-w-5xl mx-auto gap-8">
 
@@ -38,47 +42,49 @@ export default function Hero() {
       {/* Botones de acción */}
       <div className="flex flex-wrap justify-center gap-4">
 
-        <a
-          href="https://www.canva.com/design/DAGqTrUH9_k/1o-JSqaBwvIpPRQ7JYTPag/view?utm_content=DAGqTrUH9_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h40ce2b8d0a"
-          target="_blank"
-          rel="noopener noreferrer"
-          draggable="false"
+        {/* Botón externo sin mostrar URL al pasar el mouse */}
+        <button
+          onClick={() =>
+            window.open(
+              "https://www.canva.com/design/DAGqTrUH9_k/1o-JSqaBwvIpPRQ7JYTPag/view?utm_content=DAGqTrUH9_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks",
+              "_blank"
+            )
+          }
           className="flex items-center justify-center gap-2 bg-green-500/30 text-white w-40 text-center px-4 py-2 rounded transition 
-         shadow shadow-green-500/50 hover:shadow-green-500 hover:shadow-lg hover:bg-green-600/60 font-ibm-plex-mono"
+          shadow shadow-green-500/50 hover:shadow-green-500 hover:shadow-lg hover:bg-green-600/60 font-ibm-plex-mono"
         >
           <FaFileAlt className="w-4 h-4" />
           Curriculum
-        </a>
+        </button>
 
-        <a
-          href="#kit"
-          draggable="false"
+        {/* Botones internos con scroll suave */}
+        <button
+          onClick={() => scrollToSection("kit")}
           className="flex items-center justify-center gap-2 bg-blue-500/30 text-white w-40 text-center px-4 py-2 rounded transition 
-         shadow shadow-blue-500/50 hover:shadow-blue-500 hover:shadow-lg hover:bg-blue-600/60 font-ibm-plex-mono"
+          shadow shadow-blue-500/50 hover:shadow-blue-500 hover:shadow-lg hover:bg-blue-600/60 font-ibm-plex-mono"
         >
           <FaTools className="w-4 h-4" />
           Mi Kit
-        </a>
+        </button>
 
-        <a
-          href="#proyectos"
-          draggable="false"
+        <button
+          onClick={() => scrollToSection("proyectos")}
           className="flex items-center justify-center gap-2 bg-red-500/30 text-white w-40 text-center px-4 py-2 rounded transition 
-         shadow shadow-red-500/50 hover:shadow-red-500 hover:shadow-lg hover:bg-red-600/60 font-ibm-plex-mono"
+          shadow shadow-red-500/50 hover:shadow-red-500 hover:shadow-lg hover:bg-red-600/60 font-ibm-plex-mono"
         >
           <FaFolderOpen className="w-4 h-4" />
           Proyectos
-        </a>
+        </button>
 
-        <a
-          href="#footer"
-          draggable="false"
+        {/* Este último aún usa href pero podés hacer scroll igual si querés */}
+        <button
+          onClick={() => scrollToSection("footer")}
           className="flex items-center justify-center gap-2 bg-yellow-500/30 text-white w-40 text-center px-4 py-2 rounded transition 
-         shadow shadow-yellow-500/50 hover:shadow-yellow-500 hover:shadow-lg hover:bg-yellow-600/60 font-ibm-plex-mono"
+          shadow shadow-yellow-500/50 hover:shadow-yellow-500 hover:shadow-lg hover:bg-yellow-600/60 font-ibm-plex-mono"
         >
           <FaEnvelope className="w-4 h-4" />
           Contactos
-        </a>
+        </button>
       </div>
 
     </section>

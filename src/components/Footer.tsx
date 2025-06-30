@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp  } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 const enlaces = [
   {
@@ -22,13 +22,20 @@ const enlaces = [
   {
     nombre: 'Whatsapp',
     url: 'https://wa.me/+542902505502',
-    Icono: FaWhatsapp ,
+    Icono: FaWhatsapp,
     hover: 'hover:text-green-400',
   },
 ];
 
-
 export default function Footer() {
+  const abrirEnlace = (url: string) => {
+    if (url.startsWith("mailto:")) {
+      window.location.href = url;
+    } else {
+      window.open(url, "_blank");
+    }
+  };
+
   return (
     <footer id="footer" className="bg-stone-900 text-white p-6 mt-10">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -37,16 +44,15 @@ export default function Footer() {
         </div>
         <div className="flex space-x-4">
           {enlaces.map(({ nombre, url, Icono, hover }, index) => (
-            <a
+            <button
               key={index}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => abrirEnlace(url)}
               className={`transition ${hover}`}
               aria-label={nombre}
+              title={nombre}
             >
               <Icono className="w-5 h-5" />
-            </a>
+            </button>
           ))}
         </div>
       </div>
