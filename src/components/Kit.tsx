@@ -8,6 +8,11 @@ const lenguajes = [
   tecnologias.css,
 ];
 
+const otrosLenguajes = [
+  tecnologias.python,
+  tecnologias.java,
+];
+
 const frameworks = [
   tecnologias.react,
   tecnologias.laravel,
@@ -25,6 +30,7 @@ const herramientas = [
   tecnologias.github,
   tecnologias.postman,
   tecnologias.vscode,
+  tecnologias.vite,
 ];
 
 const basesDeDatos = [
@@ -46,6 +52,12 @@ export default function Kit() {
             <h3 className="text-2xl mb-4 text-green-400">Lenguajes</h3>
             <ul className="space-y-4">
               {lenguajes.map(({ Icon, nombre, color }) => (
+                <li key={nombre} className="flex items-center hover:scale-105 transition font-ibm-plex-mono">
+                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                </li>
+              ))}
+              <hr className="hidden md:block border-green-400 my-4" />
+              {otrosLenguajes.map(({ Icon, nombre, color }) => (
                 <li key={nombre} className="flex items-center hover:scale-105 transition font-ibm-plex-mono">
                   <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
                 </li>

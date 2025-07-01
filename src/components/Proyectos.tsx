@@ -1,58 +1,75 @@
 import { useState } from "react";
 import { proyectos } from "../data/proyectos";
 import type { Proyecto } from "../types/proyectos";
+import { motion, AnimatePresence } from "framer-motion";
+
+const variantes = {
+  enter: (direccion: number) => ({
+    x: direccion > 0 ? 50 : -50,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direccion: number) => ({
+    x: direccion > 0 ? -50 : 50,
+    opacity: 0,
+  }),
+};
 
 function CardProyecto({ proyecto }: { proyecto: Proyecto }) {
   const [indice, setIndice] = useState(0);
+  const [direccion, setDireccion] = useState(0);
 
   const siguiente = () => {
-    setIndice((indice + 1) % proyecto.imagenes.length);
+    setDireccion(1);
+    setIndice((prev) => (prev + 1) % proyecto.imagenes.length);
   };
 
   const anterior = () => {
-    setIndice((indice - 1 + proyecto.imagenes.length) % proyecto.imagenes.length);
+    setDireccion(-1);
+    setIndice((prev) => (prev - 1 + proyecto.imagenes.length) % proyecto.imagenes.length);
   };
 
   return (
     <div className="relative bg-stone-800 rounded-lg p-6 shadow hover:shadow-lg transition flex flex-col">
-      {/* Badge privado */}
-      <span
-        className={`flex items-center gap-1 px-2 py-1 text-xs rounded-full absolute top-4 right-4 
-        ${proyecto.privado.color} bg-stone-900 border border-current shadow-md z-10`}
-      >
-        <proyecto.privado.Icon className="w-4 h-4" />
-        {proyecto.privado.nombre}
-      </span>
+      {/* ...otros elementos... */}
 
-      {/* Carrusel de imágenes */}
-      <div className="relative w-full mb-4">
-        <img
-          src={proyecto.imagenes[indice]}
-          alt={`${proyecto.nombre} imagen ${indice + 1}`}
-          draggable="false"
-          className="w-full h-64 object-cover rounded transition duration-500"
-        />
+      <div className="relative w-full mb-4 h-64 overflow-hidden rounded">
+        <AnimatePresence mode="wait" custom={direccion}>
+          <motion.img
+            key={proyecto.imagenes[indice]}
+            src={proyecto.imagenes[indice]}
+            alt={`${proyecto.nombre} imagen ${indice + 1}`}
+            draggable="false"
+            className="absolute w-full h-full object-cover rounded"
+            custom={direccion}
+            variants={variantes}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "tween", duration: 0.5, ease: "easeInOut" },
+              opacity: { duration: 0.6, ease: "easeOut" },
+            }}
+          />
+        </AnimatePresence>
+
 
         <button
           onClick={anterior}
-          className="absolute left-0 top-1/2 -translate-y-1/2 
-             bg-black/80 text-white w-6 h-16 
-             flex items-center justify-center 
-             rounded-r-md hover:bg-black/70 transition"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/80 text-white w-6 h-16 flex items-center justify-center rounded-r-md hover:bg-black/70 transition"
         >
           ‹
         </button>
 
         <button
           onClick={siguiente}
-          className="absolute right-0 top-1/2 -translate-y-1/2 
-             bg-black/80 text-white w-6 h-16 
-             flex items-center justify-center 
-             rounded-l-md border-red-500 hover:bg-black/70 transition"
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/80 text-white w-6 h-16 flex items-center justify-center rounded-l-md border-red-500 hover:bg-black/70 transition"
         >
           ›
         </button>
-
       </div>
 
       {/* Contenido principal */}
