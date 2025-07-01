@@ -29,7 +29,7 @@ export default function Hero() {
             src="image/logo-sf.webp"
             alt="Logo personal"
             draggable="false"
-            className="w-full h-auto max-w-xs md:max-w-full"
+            className="logo-neon w-full h-auto max-w-xs md:max-w-full"
           />
         </div>
       </div>

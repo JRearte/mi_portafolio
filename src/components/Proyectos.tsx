@@ -109,9 +109,11 @@ export default function Proyectos() {
   return (
     <section id="proyectos" className="py-16 px-4 text-gray-200">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-doto font-bold mb-12 text-center border-b border-green-400 pb-4">
+        <h2 className="text-4xl font-doto font-bold mb-4 text-center text-white">
           Proyectos Destacados
         </h2>
+        <div className="mx-auto w-full h-0.5 bg-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] rounded mb-12" />
+
 
         <div className="grid md:grid-cols-2 gap-10">
           {proyectos.map((proyecto) => (
