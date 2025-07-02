@@ -1,6 +1,16 @@
 import { TypeAnimation } from "react-type-animation";
+import { useState } from "react";
+import { sumarios } from "../data/academico";
 
 export default function Hero() {
+
+  const [abierto, setAbierto] = useState<string | null>(null);
+
+  const toggle = (titulo: string) => {
+    setAbierto((prev) => (prev === titulo ? null : titulo));
+  };
+
+
   return (
     <section id="hero" className="flex flex-col items-center justify-center px-4 py-20 max-w-5xl mx-auto gap-8">
 
@@ -33,6 +43,48 @@ export default function Hero() {
           />
         </div>
       </div>
+
+
+
+      <div className="flex flex-col gap-4 w-full">
+        {sumarios.map(({ titulo, icono: Icono, items }) => (
+          <div
+            key={titulo}
+            className={`border rounded-lg p-4 bg-stone-950/90 backdrop-blur transition 
+            ${abierto === titulo ? "border-white drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]" : "border-white/20"}
+          `}
+          >
+            <button
+              onClick={() => toggle(titulo)}
+              className="w-full flex items-center justify-between cursor-pointer text-lg text-white list-none font-ibm-plex-mono"
+            >
+              <span className="flex items-center gap-2">
+                <Icono className="text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]" />
+                {titulo}
+              </span>
+              <span
+                className={`text-white transition-transform drop-shadow-[0_0_6px_rgba(255,255,255,0.6)] ${abierto === titulo ? "rotate-180" : ""
+                  }`}
+              >
+                ▼
+              </span>
+            </button>
+
+            {abierto === titulo && (
+              <ul className="mt-4 ml-6 list-none space-y-2 text-sm text-white/90 animate-fade-in">
+                {items.map(({ texto, icono: Icono, title }, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <Icono title={title} className="text-white/90 mt-[2px] flex-shrink-0" />
+                    {texto}
+
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 }

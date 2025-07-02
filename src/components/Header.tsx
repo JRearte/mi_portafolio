@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import {
     Menu,
@@ -38,7 +36,7 @@ export default function Header() {
                     onClick={() => scrollToSection('hero')}
                     className="text-lg font-bold font-ibm-plex-mono hover:text-gray-300 transition"
                 >
-                    Jonatán Rearte
+                    JR
                 </button>
 
                 {/* Navegación de escritorio */}
