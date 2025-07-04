@@ -1,6 +1,8 @@
+import type { IconType } from "react-icons/lib";
+
 export type Proyecto = {
   nombre: string;
-  descripcion: string;
+  descripcion: string[];
   enlace: string | null;
   privado: {
     color: string;
@@ -19,4 +21,5 @@ export type Proyecto = {
     nombre: string;
   }[];
   imagenes: string[];
+  funcionalidades?:{ Icon: IconType; Item: string }[];
 };

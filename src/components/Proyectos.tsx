@@ -1,126 +1,133 @@
 import { useState } from "react";
 import { proyectos } from "../data/proyectos";
 import type { Proyecto } from "../types/proyectos";
-import { motion, AnimatePresence } from "framer-motion";
+import { XCircle } from "lucide-react";
 
-const variantes = {
-  enter: (direccion: number) => ({
-    x: direccion > 0 ? 50 : -50,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direccion: number) => ({
-    x: direccion > 0 ? -50 : 50,
-    opacity: 0,
-  }),
-};
+export default function ProyectosGrid() {
+  const [modalAbierto, setModalAbierto] = useState(false);
+  const [proyectoSeleccionado, setProyectoSeleccionado] = useState<Proyecto | null>(null);
 
-function CardProyecto({ proyecto }: { proyecto: Proyecto }) {
-  const [indice, setIndice] = useState(0);
-  const [direccion, setDireccion] = useState(0);
-
-  const siguiente = () => {
-    setDireccion(1);
-    setIndice((prev) => (prev + 1) % proyecto.imagenes.length);
+  const abrirModal = (proyecto: Proyecto) => {
+    setProyectoSeleccionado(proyecto);
+    setModalAbierto(true);
   };
 
-  const anterior = () => {
-    setDireccion(-1);
-    setIndice((prev) => (prev - 1 + proyecto.imagenes.length) % proyecto.imagenes.length);
+  const cerrarModal = () => {
+    setModalAbierto(false);
+    setProyectoSeleccionado(null);
   };
 
   return (
-    <div className="relative bg-stone-800 rounded-lg p-6 shadow hover:shadow-lg transition flex flex-col">
-      {/* ...otros elementos... */}
-
-      <div className="relative w-full mb-4 h-64 overflow-hidden rounded">
-        <AnimatePresence mode="wait" custom={direccion}>
-          <motion.img
-            key={proyecto.imagenes[indice]}
-            src={proyecto.imagenes[indice]}
-            alt={`${proyecto.nombre} imagen ${indice + 1}`}
-            draggable="false"
-            className="absolute w-full h-full object-cover rounded"
-            custom={direccion}
-            variants={variantes}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "tween", duration: 0.5, ease: "easeInOut" },
-              opacity: { duration: 0.6, ease: "easeOut" },
-            }}
-          />
-        </AnimatePresence>
-
-
-        <button
-          onClick={anterior}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/80 text-white w-6 h-16 flex items-center justify-center rounded-r-md hover:bg-black/70 transition"
-        >
-          ‹
-        </button>
-
-        <button
-          onClick={siguiente}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/80 text-white w-6 h-16 flex items-center justify-center rounded-l-md border-red-500 hover:bg-black/70 transition"
-        >
-          ›
-        </button>
-      </div>
-
-      {/* Contenido principal */}
-      <div className="flex-grow">
-        <div className="mb-2">
-          <h3 className="text-2xl font-semibold text-center">{proyecto.nombre}</h3>
-        </div>
-        <p className="text-justify">{proyecto.descripcion}</p>
-      </div>
-
-      {/* Línea con estado centrado */}
-      <div className="relative my-6 flex items-center justify-center">
-        <div className={`flex-grow border-t border-current ${proyecto.estado.color}`}></div>
-
-        <span
-          className={`flex items-center gap-1 px-2 py-1 text-xs rounded-full 
-          ${proyecto.estado.color} ${proyecto.estado.bg} border border-current shadow-md`}
-        >
-          <proyecto.estado.Icon className="w-4 h-4" />
-          {proyecto.estado.nombre}
-        </span>
-
-        <div className={`flex-grow border-t border-current ${proyecto.estado.color}`}></div>
-      </div>
-
-      {/* Footer de tecnologías */}
-      <footer className="flex flex-wrap gap-4 justify-center">
-        {proyecto.tecnologias.map(({ Icon, color, nombre }) => (
-          <Icon key={nombre} className={`${color} w-6 h-6`} title={nombre} />
-        ))}
-      </footer>
-    </div>
-  );
-}
-
-export default function Proyectos() {
-  return (
-    <section id="proyectos" className="py-16 px-4 text-gray-200">
-      <div className="max-w-5xl mx-auto">
+    <>
+      <section id="proyectos" className=" max-w-5xl mx-auto py-8">
         <h2 className="text-4xl font-doto font-bold mb-4 text-center text-white">
-          Proyectos Destacados
+          Mis Proyectos
         </h2>
         <div className="mx-auto w-full h-0.5 bg-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] rounded mb-12" />
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-2 py-4">
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {proyectos.map((proyecto) => (
-            <CardProyecto key={proyecto.nombre} proyecto={proyecto} />
+          {proyectos.map((proyecto: Proyecto, i: number) => (
+            <div
+              key={i}
+              onClick={() => abrirModal(proyecto)}
+              className="relative rounded-xl border-white border overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300 group"
+            >
+              {/* Imagen completa */}
+              <img
+                src={proyecto.imagenes[0]}
+                alt={proyecto.nombre}
+                className="w-full h-64 object-cover"
+              />
+
+              {/* Footer con blur y texto */}
+              <div className="absolute bottom-0 w-full bg-black/50 backdrop-blur-sm py-2 px-4">
+                <h3 className="text-white font-semibold text-lg text-center drop-shadow-md">
+                  {proyecto.nombre}
+                </h3>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      {modalAbierto && proyectoSeleccionado && (
+        <div
+          className="fixed inset-0 bg-slate-950/80 flex justify-center items-center z-50"
+          onClick={cerrarModal}
+        >
+          <div
+            className="bg-stone-950 text-white rounded-xl w-full max-w-5xl relative shadow-2xl max-h-[90vh] overflow-y-auto px-6 pb-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="sticky top-0 z-20 bg-stone-950 pt-4 pb-2 flex items-center justify-between">
+              <h2 className="text-lg font-bold text-white">{proyectoSeleccionado.nombre}</h2>
+              <XCircle
+                onClick={cerrarModal}
+                className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer transition"
+              />
+            </div>
+
+
+            {/* Imagenes carrusel */}
+            <div className="flex overflow-x-auto space-x-4 mb-6">
+              {proyectoSeleccionado.imagenes.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`Vista ${i}`}
+                  draggable="false"
+                  className="inline-block w-[500px] h-[280px] object-cover rounded-xl border border-stone-800 shadow-md"
+                />
+              ))}
+            </div>
+
+            {/* Descripción */}
+            {proyectoSeleccionado.descripcion.map((parrafo, index) => (
+              <p
+                key={index}
+                className="mb-4 text-gray-300 text-justify leading-relaxed"
+              >
+                {parrafo}
+              </p>
+            ))}
+
+
+            {/* Funcionalidades */}
+            <ul className="space-y-2 mb-6 list-disc list-inside text-gray-300">
+              {proyectoSeleccionado.funcionalidades?.map(({ Icon, Item }, index) => (
+                <li
+                  key={index}
+                  className="flex items-center gap-3 p-2 rounded-md bg-gradient-to-r from-stone-800 via-stone-900 to-stone-800 shadow-md"
+                >
+                  <Icon className="text-stone-50 text-lg drop-shadow-[0_0_2px_rgba(255,255,255,0.9)] flex-shrink-0 logo-neon" />
+                  <span>{Item}</span>
+                </li>
+              ))}
+            </ul>
+
+
+            {/* Tecnologias */}
+            <div className="flex flex-wrap gap-3 border-t border-stone-700 pt-4 items-center justify-center">
+              {proyectoSeleccionado.tecnologias.map(({ nombre, Icon, color }, i) => (
+                <span
+                  key={i}
+                  className={`flex items-center gap-2 text-sm font-semibold px-3 py-1 rounded bg-stone-900 ${color} shadow-[0_0_2px_1px] ${color}`}
+                  title={nombre}
+                >
+                  <Icon className="w-4 h-4" />
+                  {nombre}
+                </span>
+              ))}
+            </div>
+
+
+
+          </div>
+        </div>
+      )}
+
+    </>
   );
 }
