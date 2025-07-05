@@ -57,19 +57,16 @@ export default function Header() {
                         </button>
                     ))}
                     <button
-                        onClick={() =>
-                            window.open(
-                                "https://www.canva.com/design/DAGqTrUH9_k/1o-JSqaBwvIpPRQ7JYTPag/view?utm_content=DAGqTrUH9_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks",
-                                "_blank"
-                            )
-                        }
-                        className="relative flex items-center justify-center gap-1 w-30 px-3 py-2 rounded 
-                            hover:bg-stone-800 transition duration-300
+                        onClick={() => window.open(`${import.meta.env.BASE_URL}CV_Jonatan_Rearte.pdf`, "_blank")}
+                        className="relative flex items-center justify-center gap-1 w-30 px-3 py-2 rounded font-semibold
+                            text-aqua-200 transition duration-300
+                            hover:bg-stone-800 hover:text-aqua-200
                             after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2
-                            after:h-0.5 after:bg-red-600 after:rounded
+                            after:h-0.5 after:bg-[#7fffd4] after:rounded
                             after:transition-all after:duration-500 after:ease-in-out
-                            after:w-0 hover:after:w-full hover:after:shadow-[0_0_8px_rgba(220,38,38,0.7)]"
+                            after:w-0 hover:after:w-full hover:after:shadow-[0_0_12px_#7fffd4,0_0_24px_#7fffd4]"
                     >
+
                         <FileText size={16} />
                         CV
                     </button>
@@ -97,12 +94,7 @@ export default function Header() {
                         </button>
                     ))}
                     <button
-                        onClick={() =>
-                            window.open(
-                                "https://www.canva.com/design/DAGqTrUH9_k/1o-JSqaBwvIpPRQ7JYTPag/view?utm_content=DAGqTrUH9_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks",
-                                "_blank"
-                            )
-                        }
+                        onClick={() => window.open(`${import.meta.env.BASE_URL}CV_Jonatan_Rearte.pdf`, "_blank")}
                         className="flex items-center gap-2 px-3 py-2 rounded hover:bg-stone-700 transition"
                     >
                         <FileText size={16} />

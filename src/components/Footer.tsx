@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const enlaces = [
   {
@@ -18,12 +18,6 @@ const enlaces = [
     url: 'mailto:jrearte198@gmail.com',
     Icono: FaEnvelope,
     hover: 'hover:text-red-500',
-  },
-  {
-    nombre: 'Whatsapp',
-    url: 'https://wa.me/+542902505502',
-    Icono: FaWhatsapp,
-    hover: 'hover:text-green-400',
   },
 ];
 

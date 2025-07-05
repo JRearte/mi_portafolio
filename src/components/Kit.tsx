@@ -42,80 +42,138 @@ export default function Kit() {
   return (
     <section id="kit" className="text-white pt-16 pb-8 px-4 py-20">
       <div className="max-w-5xl mx-auto">
-        {/* Título principal con borde blanco */}
-        <h2 className="text-4xl font-doto font-bold mb-4 text-center text-white">
+        <h2 className="text-4xl font-doto font-bold mb-12 text-center border-b border-white pb-4 drop-shadow-[0_0_8px_rgba(255,255,255)]">
           Mi Kit de Herramientas
         </h2>
-        <div className="mx-auto w-full h-0.5 bg-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] rounded mb-12" />
 
         <div className="grid md:grid-cols-3 gap-10">
           {/* Lenguajes */}
           <div>
-            <h3 className="text-2xl mb-4 text-white drop-shadow-[0_0_8px_rgba(255,255,255)]">Lenguajes</h3>
+            <h3 className="text-2xl mb-4 text-white drop-shadow-[0_0_6px_rgba(255,255,255)]">
+              Lenguajes
+            </h3>
             <ul className="space-y-4">
-              {lenguajes.map(({ Icon, nombre, color }) => (
+              {lenguajes.map(({ Icon, nombre, color, enlace }) => (
                 <li
                   key={nombre}
-                  className="flex items-center transition font-ibm-plex-mono cursor-default hover:scale-105"
+                  className="flex items-center transition font-ibm-plex-mono cursor-pointer hover:scale-105"
                 >
-                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                  <a
+                    href={enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:underline"
+                    title={`Ir a la documentación de ${nombre}`}
+                  >
+                    <Icon className={`${color} w-6 h-6 mr-2`} />
+                    {nombre}
+                  </a>
                 </li>
               ))}
               <div className="hidden md:block h-0.5 bg-white my-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] rounded" />
-              {otrosLenguajes.map(({ Icon, nombre, color }) => (
+              {otrosLenguajes.map(({ Icon, nombre, color, enlace }) => (
                 <li
                   key={nombre}
-                  className="flex items-center transition font-ibm-plex-mono cursor-default hover:scale-105"
+                  className="flex items-center transition font-ibm-plex-mono cursor-pointer hover:scale-105"
                 >
-                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                  <a
+                    href={enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:underline"
+                    title={`Ir a la documentación de ${nombre}`}
+                  >
+                    <Icon className={`${color} w-6 h-6 mr-2`} />
+                    {nombre}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Frameworks & Librerías */}
+          {/* Frameworks y Librerías */}
           <div>
-            <h3 className="text-2xl mb-4 text-white drop-shadow-[0_0_8px_rgba(255,255,255)]">Frameworks & Librerías</h3>
+            <h3 className="text-2xl mb-4 text-white drop-shadow-[0_0_6px_rgba(255,255,255)]">
+              Frameworks & Librerías
+            </h3>
             <ul className="space-y-4">
-              {frameworks.map(({ Icon, nombre, color }) => (
+              {frameworks.map(({ Icon, nombre, color, enlace }) => (
                 <li
                   key={nombre}
-                  className="flex items-center transition font-ibm-plex-mono cursor-default hover:scale-105"
+                  className="flex items-center transition font-ibm-plex-mono cursor-pointer hover:scale-105"
                 >
-                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                  <a
+                    href={enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:underline"
+                    title={`Ir a la documentación de ${nombre}`}
+                  >
+                    <Icon className={`${color} w-6 h-6 mr-2`} />
+                    {nombre}
+                  </a>
                 </li>
               ))}
               <div className="hidden md:block h-0.5 bg-white my-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] rounded" />
-              {librerias.map(({ Icon, nombre, color }) => (
+              {librerias.map(({ Icon, nombre, color, enlace }) => (
                 <li
                   key={nombre}
-                  className="flex items-center transition font-ibm-plex-mono cursor-default hover:scale-105"
+                  className="flex items-center transition font-ibm-plex-mono cursor-pointer hover:scale-105"
                 >
-                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                  <a
+                    href={enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:underline"
+                    title={`Ir a la documentación de ${nombre}`}
+                  >
+                    <Icon className={`${color} w-6 h-6 mr-2`} />
+                    {nombre}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Herramientas & BD */}
+          {/* Herramientas y BD */}
           <div>
-            <h3 className="text-2xl mb-4 text-white drop-shadow-[0_0_8px_rgba(255,255,255)]">Herramientas & BD</h3>
+            <h3 className="text-2xl mb-4 text-white drop-shadow-[0_0_6px_rgba(255,255,255)]">
+              Herramientas & BD
+            </h3>
             <ul className="space-y-4">
-              {herramientas.map(({ Icon, nombre, color }) => (
+              {herramientas.map(({ Icon, nombre, color, enlace }) => (
                 <li
                   key={nombre}
-                  className="flex items-center transition font-ibm-plex-mono cursor-default hover:scale-105"
+                  className="flex items-center transition font-ibm-plex-mono cursor-pointer hover:scale-105"
                 >
-                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                  <a
+                    href={enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:underline"
+                    title={`Ir a la documentación de ${nombre}`}
+                  >
+                    <Icon className={`${color} w-6 h-6 mr-2`} />
+                    {nombre}
+                  </a>
                 </li>
               ))}
               <div className="hidden md:block h-0.5 bg-white my-4 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] rounded" />
-              {basesDeDatos.map(({ Icon, nombre, color }) => (
+              {basesDeDatos.map(({ Icon, nombre, color, enlace }) => (
                 <li
                   key={nombre}
-                  className="flex items-center transition font-ibm-plex-mono cursor-default hover:scale-105"
+                  className="flex items-center transition font-ibm-plex-mono cursor-pointer hover:scale-105"
                 >
-                  <Icon className={`${color} w-6 h-6 mr-2`} /> {nombre}
+                  <a
+                    href={enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-white hover:underline"
+                    title={`Ir a la documentación de ${nombre}`}
+                  >
+                    <Icon className={`${color} w-6 h-6 mr-2`} />
+                    {nombre}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -125,4 +183,3 @@ export default function Kit() {
     </section>
   );
 }
-
