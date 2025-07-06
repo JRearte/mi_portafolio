@@ -12,7 +12,7 @@ export default function Hero() {
 
 
   return (
-    <section id="hero" className="flex flex-col items-center justify-center px-4 py-20 max-w-5xl mx-auto gap-8">
+    <section id="hero" className="select-none flex flex-col items-center justify-center px-4 py-20 max-w-5xl mx-auto gap-8">
 
       {/* Contenido principal: texto + imagen */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 w-full">

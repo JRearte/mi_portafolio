@@ -40,7 +40,7 @@ const basesDeDatos = [
 
 export default function Kit() {
   return (
-    <section id="kit" className="text-white pt-16 pb-8 px-4 py-20">
+    <section id="kit" className="select-none text-white pt-16 pb-8 px-4 py-20">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-doto font-bold mb-12 text-center border-b border-white pb-4 drop-shadow-[0_0_8px_rgba(255,255,255)]">
           Mi Kit de Herramientas

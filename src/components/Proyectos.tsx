@@ -19,7 +19,7 @@ export default function ProyectosGrid() {
 
   return (
     <>
-      <section id="proyectos" className=" max-w-5xl mx-auto py-8">
+      <section id="proyectos" className="select-none max-w-5xl mx-auto py-8">
         <h2 className="text-4xl font-doto font-bold mb-4 text-center text-white">
           Mis Proyectos
         </h2>
@@ -53,7 +53,7 @@ export default function ProyectosGrid() {
 
       {modalAbierto && proyectoSeleccionado && (
         <div
-          className="fixed inset-0 bg-slate-950/80 flex justify-center items-center z-50"
+          className="select-none fixed inset-0 bg-slate-950/80 flex justify-center items-center z-50"
           onClick={cerrarModal}
         >
           <div
