@@ -86,7 +86,7 @@ export const proyectos: Proyecto[] = [
     estado: tecnologias.en_proceso,
   },
   {
-    nombre: "Portfolio Personal",
+    nombre: "Portafolio Personal",
     descripcion: [
       "Página web personal donde presento mis proyectos destacados, mis habilidades técnicas y la experiencia que he adquirido como desarrollador web.",
     ],
