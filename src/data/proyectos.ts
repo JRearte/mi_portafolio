@@ -78,6 +78,8 @@ export const proyectos: Proyecto[] = [
     imagenes: [
       "image/zonAtlas/login.webp",
       "image/zonAtlas/mapa.webp",
+      "image/zonAtlas/mapa2.webp",
+      "image/zonAtlas/productos.webp",
     ],
     enlace: null,
     privado: tecnologias.privado,
