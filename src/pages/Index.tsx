@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Kit from "../components/Kit";
 import Proyectos from "../components/Proyectos";
+import Formulario from "../components/Formulario";
 import Footer from "../components/Footer";
 
 
@@ -13,6 +14,7 @@ export default function Index() {
         <Hero />      {/* min-h-screen */}
         <Kit />       {/* solo padding vertical */}
         <Proyectos /> {/* solo padding vertical */}
+        <Formulario /> {/* solo padding vertical */}
       </main>
       <Footer />
     </div>

@@ -24,7 +24,7 @@ export default function Header() {
         { id: 'hero', texto: 'Inicio', icono: <Home size={16} /> },
         { id: 'kit', texto: 'Mi Kit', icono: <Wrench size={16} /> },
         { id: 'proyectos', texto: 'Proyectos', icono: <FolderOpen size={16} /> },
-        { id: 'footer', texto: 'Contactos', icono: <Mail size={16} /> },
+        { id: 'formulario', texto: 'Contactos', icono: <Mail size={16} /> },
     ];
 
     return (
