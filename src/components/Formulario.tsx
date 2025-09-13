@@ -15,7 +15,6 @@ export default function ContactForm() {
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
-    // 1️⃣ Enviar confirmación al solicitante (no se muestra toast)
     emailjs.sendForm(
       serviceID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_CONFIRM_ID as string,
@@ -23,7 +22,6 @@ export default function ContactForm() {
       publicKey
     ).catch(err => console.error("Error al enviar confirmación:", err));
 
-    // 2️⃣ Enviar a cuenta dev
     emailjs.sendForm(
       serviceID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_DEV_ID as string,

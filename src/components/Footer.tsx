@@ -9,7 +9,7 @@ const enlaces = [
   },
   {
     nombre: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/jonatan-rearte-078b5a233/',
+    url: 'https://www.linkedin.com/in/jonatán-rearte',
     Icono: FaLinkedin,
     hover: 'hover:text-blue-500',
   },
