@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { proyectos } from "../data/proyectos";
-import type { Proyecto } from "../types/proyectos";
+import { proyectos } from "../../data/proyectos";
+import type { Proyecto } from "../../types/proyectos";
 import { XCircle } from "lucide-react";
 
 export default function ProyectosGrid() {

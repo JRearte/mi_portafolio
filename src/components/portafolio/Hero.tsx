@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
-import { sumarios } from "../data/academico";
+import { sumarios } from "../../data/academico";
 
 export default function Hero() {
 

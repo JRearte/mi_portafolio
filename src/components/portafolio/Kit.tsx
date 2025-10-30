@@ -1,4 +1,4 @@
-import { tecnologias } from '../data/tecnologias';
+import { tecnologias } from '../../data/tecnologias';
 
 const lenguajes = [
   tecnologias.typescript,

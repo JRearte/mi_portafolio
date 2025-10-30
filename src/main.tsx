@@ -1,18 +1,13 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import Index from "./pages/Index";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./app";
+import "./index.css";
 
-export function meta() {
-  return {
-    title: "Portafolio",
-    description: "Bienvenido a mi portfolio!"
-  };
-}
-
-
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Index />
-  </StrictMode>,
-)
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
+);
