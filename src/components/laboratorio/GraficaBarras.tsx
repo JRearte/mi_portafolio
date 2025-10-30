@@ -93,7 +93,7 @@ export default function GraficoBarras({ datos, titulo }: Props) {
 
     return (
         <div className="p-6 bg-stone-900 rounded-2xl flex flex-col items-center gap-4 transition-all duration-300">
-            <div className="w-full">
+            <div className="w-full h-96">
                 <Bar ref={chartRef} data={chartData} options={options} />
             </div>
             <div className="flex items-center gap-3">
