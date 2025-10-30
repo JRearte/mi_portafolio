@@ -31,7 +31,7 @@ export default function GraficoBarras({ datos, titulo }: Props) {
         const ctx = chart.ctx as CanvasRenderingContext2D;
         const originalFill = ctx.fill.bind(ctx);
 
-        // Glow neón
+        // Glow neón en barras
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ctx.fill = (...args: [any]) => {
             ctx.save();
@@ -52,7 +52,7 @@ export default function GraficoBarras({ datos, titulo }: Props) {
         labels: datos.map(d => d.mes), // Abreviado para eje X
         datasets: [
             {
-                label: " Usuarios",
+                label: "Usuarios",
                 data: datos.map(d => d.valor),
                 backgroundColor: `${color}90`,
                 borderColor: color,
@@ -66,6 +66,7 @@ export default function GraficoBarras({ datos, titulo }: Props) {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false, // Permite que ocupe la altura del contenedor
         plugins: {
             legend: { position: "bottom" as const, labels: { color } },
             title: { display: true, text: titulo, color, font: { size: 16 } },
@@ -93,9 +94,12 @@ export default function GraficoBarras({ datos, titulo }: Props) {
 
     return (
         <div className="p-6 bg-stone-900 rounded-2xl flex flex-col items-center gap-4 transition-all duration-300">
-            <div className="w-full h-96">
+            {/* Contenedor con altura mínima y responsive */}
+            <div className="w-full min-h-[300px] md:min-h-[400px]">
                 <Bar ref={chartRef} data={chartData} options={options} />
             </div>
+
+            {/* Selector de color */}
             <div className="flex items-center gap-3">
                 <label className="text-white font-ibm-plex-mono text-rm">
                     <HiOutlineSwatch className="inline-block mr-1 h-6 w-6" /> Color del gráfico:
