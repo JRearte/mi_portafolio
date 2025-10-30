@@ -95,8 +95,13 @@ export default function GraficoBarras({ datos, titulo }: Props) {
     return (
         <div className="p-6 bg-stone-900 rounded-2xl flex flex-col items-center gap-4 transition-all duration-300">
             {/* Contenedor con altura mínima y responsive */}
-            <div className="w-full min-h-[300px] md:min-h-[400px]">
-                <Bar ref={chartRef} data={chartData} options={options} />
+            <div className="w-full">
+                <Bar
+                    ref={chartRef}
+                    data={chartData}
+                    options={{ ...options, maintainAspectRatio: false }}
+                    height={400} // altura mínima fija
+                />
             </div>
 
             {/* Selector de color */}
