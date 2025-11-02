@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Estadistica from "../components/laboratorio/Estadistica";
+import Utileria from "../components/laboratorio/Utileria";
 
 export default function Laboratorio() {
   return (
@@ -8,6 +9,7 @@ export default function Laboratorio() {
       <Header />
       <main className="flex-grow">
         <Estadistica />
+        <Utileria />
       </main>
       <Footer />
     </div>
