@@ -41,7 +41,7 @@ export default function Footer() {
             <button
               key={index}
               onClick={() => abrirEnlace(url)}
-              className={`transition ${hover}`}
+              className={`transition ${hover} cursor-pointer`}
               aria-label={nombre}
               title={nombre}
             >

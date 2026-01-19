@@ -1,8 +1,8 @@
 import { FaBrain, FaProjectDiagram, FaCodeBranch, FaUserCheck } from "react-icons/fa";
 import { GiGraduateCap, GiNotebook } from "react-icons/gi";
 import { HiOutlineDocumentText, HiOutlineClipboardDocumentCheck, HiOutlineCpuChip } from "react-icons/hi2";
-import { TbCertificate, TbTopologyStar3, TbBrain, TbNumber10 } from "react-icons/tb";
-import { RiNumber7, RiNumber8, RiNumber9, RiNumber5, RiNumber6, RiNumber4 } from "react-icons/ri";
+import { TbCertificate, TbTopologyStar3, TbBrain, /*TbNumber10*/ } from "react-icons/tb";
+//import { RiNumber7, RiNumber8, RiNumber9, RiNumber5, RiNumber6, RiNumber4 } from "react-icons/ri";
 import { PiDatabase } from "react-icons/pi";
 import { RiProjectorLine, RiBugLine } from "react-icons/ri";
 import { MdOutlineLan, MdOutlineMemory, MdDeviceHub } from "react-icons/md";
@@ -11,37 +11,37 @@ import { FiTarget } from "react-icons/fi";
 
 
 export const sumarios = [
-  {
-    titulo: "Tecnicatura en Análisis de Sistemas",
-    icono: GiGraduateCap,
-    items: [
-      { texto: "Idioma Moderno (Inglés)", icono: RiNumber7, title: "Materia finalizada el 25-09-2018" },
-      { texto: "Matemática 1", icono: RiNumber8, title: "Materia finalizada el 11-07-2022" },
-      { texto: "Resolución de Problemas y Algoritmos", icono: RiNumber9, title: "Materia finalizada el 07-12-2018" },
-      { texto: "Aspectos Profesionales", icono: RiNumber9, title: "Materia finalizada el 26-09-2019" },
-      { texto: "Proceso de Desarrollo de Software", icono: RiNumber5, title: "Materia finalizada el 05-12-2018" },
-      { texto: "Matemática Discreta", icono: RiNumber4, title: "Materia finalizada el 27-02-2023" },
-      { texto: "Organización de las Computadoras", icono: RiNumber9, title: "Materia finalizada el 11-07-2018" },
-      { texto: "Matemática 2", icono: RiNumber7, title: "Materia finalizada el 19-12-2022" },
-      { texto: "Programación de Algoritmos", icono: RiNumber8, title: "Materia finalizada el 07-12-2018" },
-      { texto: "Programación Orientada a Objetos", icono: RiNumber9, title: "Materia finalizada el 13-10-2020" },
-      { texto: "Gestión de Organizaciones", icono: RiNumber8, title: "Materia finalizada el 30-07-2019" },
-      { texto: "Arquitecturas de Computadoras", icono: RiNumber6, title: "Materia finalizada el 04-12-2018" },
-      { texto: "Requerimientos de Software", icono: RiNumber8, title: "Materia finalizada el 19-12-2019" },
-      { texto: "Estructura de Datos", icono: RiNumber9, title: "Materia finalizada el 03-12-2024" },
-      { texto: "Base de Datos", icono: RiNumber9, title: "Materia finalizada el 14-02-2022" },
-      { texto: "Análisis y Diseño de Software", icono: RiNumber8, title: "Materia finalizada el 04-08-2023" },
-      { texto: "Sistemas Operativos", icono: RiNumber9, title: "Materia finalizada el 10-07-2019" },
-      { texto: "Validación y Verificación de Software", icono: RiNumber7, title: "Materia finalizada el 27-02-2024" },
-      { texto: "Gestión de Proyectos de Software", icono: RiNumber7, title: "Materia finalizada el 10-07-2024" },
-      { texto: "Laboratorio de Programación", icono: RiNumber8, title: "Materia finalizada el 25-09-2023" },
-      { texto: "Estadística", icono: RiNumber8, title: "Materia finalizada el 20-03-2024" },
-      { texto: "Redes y Telecomunicaciones", icono: RiNumber9, title: "Materia finalizada el 15-12-2020" },
-      { texto: "Sistemas Operativos Distribuidos", icono: RiNumber8, title: "Materia finalizada el 24-02-2021" },
-      { texto: "Fundamentos de Ciencias de la Computación", icono: RiNumber9, title: "Materia finalizada el 10-07-2023" },
-      { texto: "Laboratorio de Desarrollo de Software", icono: TbNumber10, title: "Materia finalizada el 30-04-2025" }
-    ]
-  },
+  /* {
+     titulo: "Tecnicatura en Análisis de Sistemas",
+     icono: GiGraduateCap,
+     items: [
+       { texto: "Idioma Moderno (Inglés)", icono: RiNumber7, title: "Materia finalizada el 25-09-2018" },
+       { texto: "Matemática 1", icono: RiNumber8, title: "Materia finalizada el 11-07-2022" },
+       { texto: "Resolución de Problemas y Algoritmos", icono: RiNumber9, title: "Materia finalizada el 07-12-2018" },
+       { texto: "Aspectos Profesionales", icono: RiNumber9, title: "Materia finalizada el 26-09-2019" },
+       { texto: "Proceso de Desarrollo de Software", icono: RiNumber5, title: "Materia finalizada el 05-12-2018" },
+       { texto: "Matemática Discreta", icono: RiNumber4, title: "Materia finalizada el 27-02-2023" },
+       { texto: "Organización de las Computadoras", icono: RiNumber9, title: "Materia finalizada el 11-07-2018" },
+       { texto: "Matemática 2", icono: RiNumber7, title: "Materia finalizada el 19-12-2022" },
+       { texto: "Programación de Algoritmos", icono: RiNumber8, title: "Materia finalizada el 07-12-2018" },
+       { texto: "Programación Orientada a Objetos", icono: RiNumber9, title: "Materia finalizada el 13-10-2020" },
+       { texto: "Gestión de Organizaciones", icono: RiNumber8, title: "Materia finalizada el 30-07-2019" },
+       { texto: "Arquitecturas de Computadoras", icono: RiNumber6, title: "Materia finalizada el 04-12-2018" },
+       { texto: "Requerimientos de Software", icono: RiNumber8, title: "Materia finalizada el 19-12-2019" },
+       { texto: "Estructura de Datos", icono: RiNumber9, title: "Materia finalizada el 03-12-2024" },
+       { texto: "Base de Datos", icono: RiNumber9, title: "Materia finalizada el 14-02-2022" },
+       { texto: "Análisis y Diseño de Software", icono: RiNumber8, title: "Materia finalizada el 04-08-2023" },
+       { texto: "Sistemas Operativos", icono: RiNumber9, title: "Materia finalizada el 10-07-2019" },
+       { texto: "Validación y Verificación de Software", icono: RiNumber7, title: "Materia finalizada el 27-02-2024" },
+       { texto: "Gestión de Proyectos de Software", icono: RiNumber7, title: "Materia finalizada el 10-07-2024" },
+       { texto: "Laboratorio de Programación", icono: RiNumber8, title: "Materia finalizada el 25-09-2023" },
+       { texto: "Estadística", icono: RiNumber8, title: "Materia finalizada el 20-03-2024" },
+       { texto: "Redes y Telecomunicaciones", icono: RiNumber9, title: "Materia finalizada el 15-12-2020" },
+       { texto: "Sistemas Operativos Distribuidos", icono: RiNumber8, title: "Materia finalizada el 24-02-2021" },
+       { texto: "Fundamentos de Ciencias de la Computación", icono: RiNumber9, title: "Materia finalizada el 10-07-2023" },
+       { texto: "Laboratorio de Desarrollo de Software", icono: TbNumber10, title: "Materia finalizada el 30-04-2025" }
+     ]
+   },*/
   {
     titulo: "Formación Académica",
     icono: GiGraduateCap,
@@ -93,5 +93,37 @@ export const sumarios = [
       { texto: "Adaptabilidad tecnológica", icono: MdDeviceHub, title: "Facilidad para incorporar nuevas herramientas y entornos de desarrollo" },
       { texto: "Comunicación escrita clara", icono: HiOutlineDocumentText, title: "Capacidad para documentar y explicar ideas técnicas con precisión" }
     ]
+  },
+  {
+    titulo: "Enfoque de Arquitectura",
+    icono: TbTopologyStar3,
+    items: [
+      {
+        texto: "Desarrollo web full stack orientado a sistemas, con separación de responsabilidades y diseño no monolítico.",
+        icono: HiOutlineCpuChip,
+        title: "Arquitectura general"
+      },
+      {
+        texto: "Frontend estructurado en capas: DTO, Mapper, Model, Services, Hooks y Components.",
+        icono: MdDeviceHub,
+        title: "Arquitectura Frontend"
+      },
+      {
+        texto: "Backend organizado por responsabilidades: Migrations, Models, Policies, Services y Controllers.",
+        icono: FaCodeBranch,
+        title: "Arquitectura Backend"
+      },
+      {
+        texto: "Documentación técnica del backend mediante Scramble y convenciones claras.",
+        icono: HiOutlineDocumentText,
+        title: "Documentación"
+      },
+      {
+        texto: "Persistencia de datos basada en modelos relacionales SQL y diseño previo del esquema.",
+        icono: PiDatabase,
+        title: "Base de datos"
+      }
+    ]
   }
+
 ];

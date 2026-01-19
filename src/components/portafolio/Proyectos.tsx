@@ -2,6 +2,7 @@ import { useState } from "react";
 import { proyectos } from "../../data/proyectos";
 import type { Proyecto } from "../../types/proyectos";
 import { XCircle } from "lucide-react";
+import ImageWithLoader from "../imageWithLoader";
 
 export default function ProyectosGrid() {
   const [modalAbierto, setModalAbierto] = useState(false);
@@ -19,7 +20,18 @@ export default function ProyectosGrid() {
 
   return (
     <>
-      <section id="proyectos" className="select-none max-w-5xl mx-auto py-8">
+      <section id="proyectos"
+        className="
+          select-none 
+          max-w-5xl 
+          mx-auto 
+          py-8 
+          flex
+          flex-col
+          px-4
+          pt-24
+          pb-16"
+      >
         <h2 className="text-4xl font-doto font-bold mb-4 text-center text-white">
           Mis Proyectos
         </h2>
@@ -71,17 +83,16 @@ export default function ProyectosGrid() {
 
 
             {/* Imagenes carrusel */}
-            <div className="flex overflow-x-auto space-x-4 mb-6">
+            <div className="flex overflow-x-auto space-x-4 mb-6 scroll-hidden">
               {proyectoSeleccionado.imagenes.map((img, i) => (
-                <img
+                <ImageWithLoader
                   key={i}
                   src={img}
                   alt={`Vista ${i}`}
-                  draggable="false"
-                  className="inline-block w-[500px] h-[280px] object-cover rounded-xl border border-stone-800 shadow-md"
                 />
               ))}
             </div>
+
 
             {/* Descripción */}
             {proyectoSeleccionado.descripcion.map((parrafo, index) => (
