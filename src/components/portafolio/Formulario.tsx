@@ -40,7 +40,7 @@ export default function ContactForm() {
   return (
     <section
       id="formulario"
-      className="min-h-screen flex items-center px-4 py-20 text-white"
+      className="min-h-full flex items-center px-4 py-10 text-white"
     >
       <ToastContainer position="bottom-right" />
 

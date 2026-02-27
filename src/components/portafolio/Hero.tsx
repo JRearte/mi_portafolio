@@ -6,9 +6,10 @@ export default function Hero() {
       id="hero"
       className="
         select-none
-        min-h-screen
+        min-h-full
         flex items-center
         px-4
+        py-10
       "
     >
       <div className="max-w-5xl mx-auto w-full flex flex-col-reverse md:flex-row items-center gap-8">

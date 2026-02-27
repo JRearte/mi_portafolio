@@ -23,14 +23,13 @@ export default function ProyectosGrid() {
       <section id="proyectos"
         className="
           select-none 
+          min-h-full
           max-w-5xl 
           mx-auto 
-          py-8 
           flex
           flex-col
           px-4
-          pt-24
-          pb-16"
+          py-10"
       >
         <h2 className="text-4xl font-doto font-bold mb-4 text-center text-white">
           Mis Proyectos

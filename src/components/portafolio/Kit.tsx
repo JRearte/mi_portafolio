@@ -44,13 +44,12 @@ export default function Kit() {
       id="kit"
       className="
         select-none
-        min-h-screen
+        min-h-full
         text-white
         flex
         flex-col
         px-4
-        pt-24
-        pb-16
+        py-10
       "
     >
 

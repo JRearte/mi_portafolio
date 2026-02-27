@@ -31,7 +31,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="footer" className="bg-stone-900 text-white p-6 mt-10">
+    <footer id="footer" className="bg-stone-900 text-white p-6">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="text-sm mb-2 md:mb-0">
           © {new Date().getFullYear()} Jonatán Rearte. Todos los derechos reservados.

@@ -23,11 +23,11 @@ export default function About() {
             id="about"
             className="
                 select-none
-                min-h-screen
+                min-h-full
                 flex flex-col
                 justify-center
                 px-4
-                pb-16
+                py-10
                 max-w-5xl
                 mx-auto
                 gap-8

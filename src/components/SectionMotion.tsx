@@ -8,7 +8,7 @@ interface Props {
 export default function SectionMotion({ children }: Props) {
   return (
     <motion.section
-      className="absolute inset-0"
+      className="absolute inset-0 overflow-y-auto overflow-x-hidden"
       initial={{ opacity: 0, x: 80 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -80 }}
