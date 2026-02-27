@@ -35,6 +35,13 @@ export default function Index() {
         return;
       }
 
+      const target = event.target as HTMLElement | null;
+
+      // Permite scroll normal dentro de modales u otros contenedores interactivos.
+      if (target?.closest('[data-wheel-lock="true"]')) {
+        return;
+      }
+
       event.preventDefault();
 
       if (lockScrollRef.current) {

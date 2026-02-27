@@ -66,10 +66,12 @@ export default function ProyectosGrid() {
         <div
           className="select-none fixed inset-0 bg-slate-950/80 flex justify-center items-center z-50"
           onClick={cerrarModal}
+          data-wheel-lock="true"
         >
           <div
             className="bg-stone-950 text-white rounded-xl w-full max-w-5xl relative shadow-2xl max-h-[90vh] overflow-y-auto px-6 pb-6"
             onClick={(e) => e.stopPropagation()}
+            data-wheel-lock="true"
           >
             {/* Header */}
             <div className="sticky top-0 z-20 bg-stone-950 pt-4 pb-2 flex items-center justify-between">
